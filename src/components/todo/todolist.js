@@ -10,7 +10,10 @@ function TodoList() {
     if (newTodo !== '') {
       const newId = id + 1;
       const newTodoItem = {
-        id: newId, text: newTodo, editing: false, editText: '',
+        id: newId,
+        text: newTodo,
+        editing: false,
+        editText: '',
       };
       setTodos([...todos, newTodoItem]);
       setNewTodo('');
@@ -81,28 +84,38 @@ function TodoList() {
                     setTodos(newTodos);
                   }}
                 />
-                <button type="button" onClick={() => handleSaveEditTodo(todo.id)}>Save</button>
-                <button type="button" onClick={() => handleCancelEditTodo(todo.id)}>Cancel</button>
+                <button type="button" onClick={() => handleSaveEditTodo(todo.id)}>
+                  Save
+                </button>
+                <button type="button" onClick={() => handleCancelEditTodo(todo.id)}>
+                  Cancel
+                </button>
               </span>
             ) : (
               <span>
                 {todo.text}
-                <button type="button" onClick={() => handleEditTodo(todo.id)}>Edit</button>
-                <button type="button" onClick={() => handleDeleteTodo(todo.id)}>Delete</button>
+                <button type="button" onClick={() => handleEditTodo(todo.id)}>
+                  Edit
+                </button>
+                <button type="button" onClick={() => handleDeleteTodo(todo.id)}>
+                  Delete
+                </button>
               </span>
             )}
           </li>
         ))}
       </ul>
-      <div className='box'>
-      <input
-        type="text"
-        className="todo"
-        value={newTodo}
-        onChange={(event) => setNewTodo(event.target.value)}
-        onKeyDown={handleKeyDown}
-      />
-      <button type="button" onClick={handleAddTodo}>Add Todo</button>
+      <div className="box">
+        <input
+          type="text"
+          className="todo"
+          value={newTodo}
+          onChange={(event) => setNewTodo(event.target.value)}
+          onKeyDown={handleKeyDown}
+        />
+        <button type="button" onClick={handleAddTodo}>
+          Add Todo
+        </button>
       </div>
     </div>
   );
