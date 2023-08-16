@@ -13,7 +13,6 @@
   
   span {
     display: flex;
-    width: 300px;
     justify-content: flex-end;
     height: 31px;
     background-color: #e9fffa;
@@ -56,7 +55,7 @@
   }
 
   .box {
-    background-color: rgb(192, 234, 247);
+    background-color: rgb(192 234 247);
     padding: 10px;
     height: fit-content;
   }
